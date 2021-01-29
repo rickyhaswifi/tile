@@ -1,0 +1,90 @@
+// Bootstrap
+@import "vendor/bootstrap/scss/bootstrap.scss";
+@import url("https://use.typekit.net/zse0tuu.css");
+
+$blue: #599CFF;
+$tablet: 768px;
+$desktop: 1024px;
+$radius: 8px;
+
+*, p {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #1c1c1c;
+  height: 100vh;
+  font-family: muli, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+section  {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: $radius;
+  padding: 20px;
+  margin: 0 20px;
+  background-color: white;
+  flex-direction: column;
+  text-align: center;
+  @media (min-width: $desktop) {
+    flex-direction: row;
+  }
+  .btn--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    @media (min-width: $tablet) {
+      margin-top: auto;
+      width: max-content;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  background: #FF9D65;
+  border-radius: $radius;
+}
+
+a {
+  &.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    width: 100%;
+    transition: all 200ms ease;
+    border-radius: $radius;
+    @media (min-width: $tablet)  {
+      min-width: 150px;
+    }
+    &.blue {
+      background-color: $blue;
+      color: #fff;
+      &:hover,  &:focus  {
+        background-color: darken($color:$blue, $amount: 20);
+      }
+    }
+    &.outline {
+      border: 1px solid $blue;
+      color: $blue;
+      &:hover,  &:focus  {
+        color: white;
+        background-color:  $blue;
+      }
+    }
+  }
+}
